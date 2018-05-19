@@ -8,9 +8,9 @@ namespace MobileDataKit_Collect.Common
   public  class FormElementFactory
     {
 
-        private static int ExcelHandle = 1;
+        private  int ExcelHandle = 1;
 
-        private static List<FormElement> CreateElements(IWorksheet worksheet)
+        private  List<FormElement> CreateElements( IWorksheet worksheet)
         {
 
             var elements = new List<FormElement>();
@@ -20,6 +20,7 @@ namespace MobileDataKit_Collect.Common
 
 
                 var formelement = new FormElement();
+                formelement.ID = Guid.NewGuid().ToString();
                 formelement.Type = worksheet.Rows[ExcelHandle].Cells[0].Value2.ToString();
                 if(formelement.Type == "end_group")
                 {
@@ -31,8 +32,17 @@ namespace MobileDataKit_Collect.Common
                 elements.Add(formelement);
                 ExcelHandle = ExcelHandle + 1;
                 if (formelement.Type == "begin_group")
+                {
+                    formelement.Type = "Group";
                     foreach (var t in CreateElements(worksheet))
+                    {
+                        t.ParentFormElement = formelement;
+
                         formelement.Fields.Add(t);
+                    }
+                        
+                }
+                   
                 
 
 
@@ -40,10 +50,10 @@ namespace MobileDataKit_Collect.Common
 
             return elements;
         }
-        public static Project Create(byte[] file)
+        public  Project Create(byte[] file)
         {
 
-            var proj= new Project();
+            var proj= new Project {ID =Guid.NewGuid().ToString() };
 
             using (var mem=new System.IO.MemoryStream(file))
             using (ExcelEngine excelEngine = new ExcelEngine())
@@ -68,7 +78,12 @@ namespace MobileDataKit_Collect.Common
                 ExcelHandle = 1;
 
                 foreach (var el in CreateElements(worksheet))
+                {
+
+                    el.Project = proj;
                     proj.FormElements.Add(el);
+                }
+                  
 
                 //Adding text to a cell
                 worksheet.Range["A1"].Text = "Hello World";

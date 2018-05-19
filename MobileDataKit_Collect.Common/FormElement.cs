@@ -4,9 +4,16 @@ using System.Text;
 
 namespace MobileDataKit_Collect.Common
 {
-   public class FormElement :  Realms.RealmObject
+   public class FormElement :  Realms.RealmObject, IFormElement
     {
 
+        public Project Project { get; set; }
+
+
+        public FormElement ParentFormElement { get; set; }
+
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
         
         public string Type { get; set; }
 

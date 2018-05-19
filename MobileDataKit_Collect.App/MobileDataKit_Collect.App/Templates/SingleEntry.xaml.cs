@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MobileDataKit_Collect.App.Views
+namespace MobileDataKit_Collect.App.Templates
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FormHome : ContentPage
+	public partial class SingleEntry : ContentView
 	{
-		public FormHome ()
+		public SingleEntry ()
 		{
 			InitializeComponent ();
-            this.BindingContext = new ViewModels.FormHomeViewModel(this);
-
 		}
 	}
 }

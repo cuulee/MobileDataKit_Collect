@@ -16,16 +16,113 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomPage.xaml.cs">
+      <DependentUpon>CustomPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)HttpService\HttpMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HttpService\HttpMessageMethod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HttpService\HttpRunner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HttpService\RealmConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HttpService\StartHttpMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HttpService\StopHttpMessage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\AppConstants.AyubuComputer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\AppConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\JsonConvert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\LoginResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\RealmObjectConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\RealmWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SecureHttpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TemplateSelectors\EntryFieldTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\NoteLabelTemplate.xaml.cs">
+      <DependentUpon>NoteLabelTemplate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\SingleEntry.xaml.cs">
+      <DependentUpon>SingleEntry.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\TextEntry.xaml.cs">
+      <DependentUpon>TextEntry.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IsNotNullOrEmptyRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IValidationRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\IValidity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validations\ValidatableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AuthenticationBaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EntryCanvasViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ExtendedBindableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FormHomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\IBaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegisterViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\WelcomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EntryCanvas.xaml.cs">
+      <DependentUpon>EntryCanvas.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\FormHome.xaml.cs">
       <DependentUpon>FormHome.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\FormHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\EntryCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CustomPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Templates\TextEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Templates\SingleEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Templates\NoteLabelTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:carouselview="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:template="clr-namespace:MobileDataKit_Collect.App.TemplateSelectors"
+             x:Class="MobileDataKit_Collect.App.Views.EntryCanvas">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+
+
+
+            <template:EntryFieldTemplateSelector x:Key="EntryFieldTemplateSelector"/>
+    </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <carouselview:CarouselViewControl   Grid.Row="1"   IndicatorsTintColor="#ffedcd"  ShowIndicators="False" Orientation="Horizontal" InterPageSpacing="10" ItemsSource="{Binding Model}"  ItemTemplate="{StaticResource EntryFieldTemplateSelector}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+        </carouselview:CarouselViewControl>
+    </ContentPage.Content>
+</ContentPage>

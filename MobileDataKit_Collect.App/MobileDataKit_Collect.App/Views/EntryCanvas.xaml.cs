@@ -10,13 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace MobileDataKit_Collect.App.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FormHome : ContentPage
+	public partial class EntryCanvas : ContentPage
 	{
-		public FormHome ()
+		public EntryCanvas ()
 		{
 			InitializeComponent ();
-            this.BindingContext = new ViewModels.FormHomeViewModel(this);
+            this.BindingContext = new ViewModels.EntryCanvasViewModel(this);
 
-		}
+
+        }
 	}
 }
