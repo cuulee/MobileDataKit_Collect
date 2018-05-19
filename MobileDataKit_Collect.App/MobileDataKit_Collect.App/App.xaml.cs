@@ -11,7 +11,15 @@ namespace MobileDataKit_Collect.App
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+            var ttt = System.IO.File.ReadAllBytes(@"Assets\CRF_01.xls");
+
+            var t = new MobileDataKit_Collect.Common.FormElement();
+            var realm = Realms.Realm.GetInstance();
+
+
+
+
+			MainPage = new NavigationPage( new Views.FormHome());
 		}
 
 		protected override void OnStart ()

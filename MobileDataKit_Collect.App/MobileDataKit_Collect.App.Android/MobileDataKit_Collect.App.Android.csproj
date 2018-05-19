@@ -100,6 +100,12 @@
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MobileDataKit_Collect.Common\MobileDataKit_Collect.Common.csproj">
+      <Project>{84ad7787-4c69-4a7d-9fe2-fa4ee2f119d8}</Project>
+      <Name>MobileDataKit_Collect.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\MobileDataKit_Collect.App\MobileDataKit_Collect.App.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
